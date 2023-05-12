@@ -1,27 +1,29 @@
 import axios from 'axios'
 import {create} from 'zustand'
-
-const coinStore =create((set)=>({
+import {debounce} from '../util/debounce'
+export const coinStore =create((set ,get)=>({
     coins: [],
     query :'' ,
-    setQuery:(e)=>{
-        set({query : e.target.value}) 
-        coinStore.getState().searchQuery()},
+    page :1 ,
+    PAGE_SIZE :1000,
     
-    
-    
-    searchQuery:async() =>{const {query} =coinStore.getState()
-    console.log(query)
-    const res =await axios.get(`http://localhost:9130/coins/${query}`)
-    console.log(res)
-    },
-
-
+   
     fetchCoins :async()=>{
-        const res= await axios.get('http://localhost:9130/coins/markets?page=3&PAGE_SIZE=20')
-    //console.log(res.data)
+        const {page,PAGE_SIZE} = coinStore.getState();
+        console.log(page,PAGE_SIZE)
+        const res= await axios.get(`http://localhost:9130/coins/markets?page=${page}&PAGE_SIZE=${PAGE_SIZE}`)
+         console.log(res.length)
     set({coins: res.data})
-    }
-}))
+    },
+    setPage: (page) => set({ page }),
+  setPageSize: (pageSize) => {
+    set({ pageSize });
+    get().fetchCoins();
+  },
+    
+    
+    // setPage: (page) => set({page}), // Update the page state
+    // setPageSize: (pageSize) => set({pageSize}), // Update the pageSize state
 
-export default coinStore
+  
+})) 

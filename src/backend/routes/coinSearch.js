@@ -4,7 +4,7 @@ const axios = require('axios');
 
 //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
 const cache = require('memory-cache');
-const cacheKey = 'geckoCoinData2';
+const cacheKey = 'geckoCoinData3';
 //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
 
 
@@ -24,30 +24,19 @@ router.get('/', async (req, res) => {
   }
   //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
     try {
-        const  page  = req.query.page;
-        const PAGE_SIZE = req.query.PAGE_SIZE
-        const pageNumber = parseInt(page, 10) || 1;
-        const startIndex = (pageNumber - 1) * PAGE_SIZE;
-        const endIndex = pageNumber * PAGE_SIZE;
-
-        const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&locale=en');
-        const data = response.data.slice(startIndex, endIndex);
-        
-        
-         
-        const parsedData = data.map(item => ({
-            name: item.name,
-            symbol: item.symbol,
-            id : item.id ,
-            current_price: item.current_price,
-            highest_price : item.high_24h,
-            lowest_price : item.low_24h,
-            price_change_24h: item.price_change_24h,
-          }));
+       
+        const searchItem = req.query.searchItem
+        console.log(searchItem)
+        const response = await axios.get(`https://api.coingecko.com/api/v3/search?query=${searchItem}`);
+        // const data = response.data.slice(startIndex, endIndex);
+        const parsedData = response.data.coins  
+       
           //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
         cache.put(cacheKey, parsedData, 5 * 60 * 1000);
         //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
-      res.json(parsedData)
+      
+        const filteredData = parsedData.map(({ id, name, large }) => ({ id, name,large }));
+        res.json(filteredData);
     } catch (error) {
       console.error(error);
       res.status(500).send('Error retrieving data from GeckoCoin API');
