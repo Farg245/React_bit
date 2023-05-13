@@ -1,6 +1,8 @@
 import axios from 'axios'
 import {create} from 'zustand'
-import {debounce} from '../util/debounce'
+
+
+
 export const coinStore =create((set ,get)=>({
     coins: [],
     query :'' ,
@@ -10,9 +12,9 @@ export const coinStore =create((set ,get)=>({
    
     fetchCoins :async()=>{
         const {page,PAGE_SIZE} = coinStore.getState();
-        console.log(page,PAGE_SIZE)
+        // console.log(page,PAGE_SIZE)
         const res= await axios.get(`http://localhost:9130/coins/markets?page=${page}&PAGE_SIZE=${PAGE_SIZE}`)
-         console.log(res.length)
+        //  console.log(res.length)
     set({coins: res.data})
     },
     setPage: (page) => set({ page }),

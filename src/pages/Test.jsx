@@ -2,7 +2,7 @@ import React from 'react'
 import coinDetails from '../stores/coinDetails'
 import {Link} from 'react-router-dom'
 import{useParams} from 'react-router-dom'
-
+import Header from '../components/Header'
 export default function Test() {
     const details= coinDetails()
     const params =useParams()
@@ -11,7 +11,7 @@ export default function Test() {
         //  console.log(params)
         details.fetchCoinDetails(params.name)
         // console.log(details.data.image)
-    },[])
+    })
     if (!details.data) {
       // Render a loading indicator while the data is being fetched
       return <div>Loading...</div>;
@@ -19,9 +19,8 @@ export default function Test() {
     return (
       
     <div>
-      <div><Link to={`/`}>
-              Home
-              </Link></div>
+      <Header back />
+    
        <img src={details.data.image} alt={details.data?.name} />
       <header>
       <h2>{details.data.name}({details.data.symbol})</h2>

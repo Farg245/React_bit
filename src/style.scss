@@ -1,0 +1,162 @@
+*{
+  margin :0;
+padding :0;
+box-sizing:border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+.width { 
+    max-width :600px ;
+margin: 0 auto ;
+width :92% ;
+}.header{
+    background:black;
+    color :  white ;
+    padding : 20px 0; 
+    position:sticky ;
+    top :0 ;
+    z-index : 10; 
+    .width {position :relative ;}
+
+    h1
+    {   text-align:center ;
+        color: white ;
+        text-transform: uppercare ;
+        font-size : 30px;
+        letter-spacing : 2px ;
+        margin-bottom :10px;
+    }
+    
+   
+    h1 a{ color :white}
+    svg {
+        color : currentColor;
+        position :absolute;
+        top :50% ;
+        left :0 ;
+        margin-top: -12px ;
+        margin-bottom :10px;
+        
+      }
+
+
+}
+.pagination {
+  display: inline-block;
+  margin-bottom :10px;
+}
+
+.pagination a {
+  color:black ;
+  float: left;
+  padding: 2px 4px;
+  border-radius: 4px ;
+  text-decoration: none;
+  margin-bottom :10px;
+}
+
+.pagination a.active {
+  background-color: rgb(191, 149, 223);
+  color:rgb(241, 234, 234);
+  font-weight: bold;
+  
+}
+
+.pagination a:hover:not(.active) {background-color: #c8c2ed;}
+
+.HomePageCoinList {
+ 
+  h2 {
+    font-size: 48px;
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color:black;
+  }
+ 
+  .CoinList-image {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    
+  }
+
+  .CoinList-image img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+  }
+}
+.HomePageCoinList a {
+  color: black;
+  
+}
+.CoinList-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 5px;
+}
+
+.CoinList-info-item {
+  margin-right: 10px;
+}
+.coin-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8e6e8;
+  padding: 10px;
+  border: 1px solid #ccc;
+  
+  .coin-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  
+  .coin-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+    .coin-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .coin-details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}
