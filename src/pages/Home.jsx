@@ -10,7 +10,7 @@ export default function Home() {
 
   React.useEffect(()=>{store.fetchCoins()})
   const totalPages = Math.ceil(store.coins.length / store.pageSize);
-  // console.log(store)
+ 
   return (
     <div class="button">
        <Header/>
@@ -23,8 +23,9 @@ export default function Home() {
       />
 
        <div className="HomePageCoinList">
+        
         <div className="width">
-        <h2>Geckocoin Market List</h2>
+        <h2>Market List</h2>
         
      <Coinlist coins={store.coins} pageSize={store.pageSize} page={store.page} />
      </div>

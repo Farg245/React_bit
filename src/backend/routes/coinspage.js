@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
             current_price: item.current_price,
             highest_price : item.high_24h,
             lowest_price : item.low_24h,
-            price_change_24h: item.price_change_24h,
+            price_change_percentage_24h: item.price_change_percentage_24h,
           }));
          
           //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429

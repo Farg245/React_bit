@@ -6,21 +6,39 @@ export default function Coinlist({ coins, pageSize, page }) {
   const endIndex = page * pageSize;
 
   return (
-    <div className="HomePageCoinlist">
+    <div className="home-cryptos">
+    <div className="home-crypto">
+     
       {coins.slice(startIndex, endIndex).map((coin) => (
-        <div key={coin.id} className="coin-cell">
+        
+        <div key={coin.id} >
           <Link to={`/${coin.id}`}>
-            <span className="CoinList-image"><img src={coin.image} alt={coin.name}/></span> 
-            <span className="HomePageCoinList">{coin.name}</span>
-            <div className="coin-details">
-              <span className="coin-detail">Current price: {coin.current_price} USD</span>
-              <span className="coin-detail">24h High: {coin.high_24h} USD</span>
-              <span className="coin-detail">24h Low: {coin.low_24h} USD</span>
-              <span className="coin-detail">24h Price Change: {coin.price_change_percentage_24h}%</span>
+          <div className="widthCoinList ">
+
+            <span className="home-crypto-image"><img src={coin.image} alt={coin.name}/></span> 
+            <div className="home-crypto-info ">
+            <span className="home-crypto-name">{coin.name}</span>
+            <span className="home-crypto-symbol">({coin.symbol})</span>
             </div>
+            </div>
+            <div className="widthCoinList ">
+              <span className="home-crypto-price">Price: {coin.current_price}USD </span>
+              </div>
+              
+              <span className="home-crypto-prices">24h High: {coin.highest_price}USD </span>
+              <span className="home-crypto-prices">24h Low: {coin.lowest_price}USD </span>
+              <span
+                className={`home-crypto-price-change ${
+                  coin.price_change_percentage_24h >= 0 ? 'green' : 'red'
+                }`}
+              >
+                Price Change: {coin.price_change_percentage_24h}%
+              </span>
+           
           </Link>
         </div>
       ))}
+    </div>
     </div>
   );
 }

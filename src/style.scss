@@ -11,11 +11,21 @@ body {
 a{
   text-decoration: none;
 }
+img{
+  max-width: 100%;
+  display: block;
+}
 .width { 
     max-width :600px ;
 margin: 0 auto ;
 width :92% ;
-}.header{
+
+}.widthCoinList { 
+  max-width :600px ;
+margin: 0 auto ;
+width :92% ;
+display:flex;}
+.header{
     background:black;
     color :  white ;
     padding : 20px 0; 
@@ -70,93 +80,123 @@ width :92% ;
 
 .pagination a:hover:not(.active) {background-color: #c8c2ed;}
 
-.HomePageCoinList {
- 
+
+.home-cryptos{
   h2 {
-    font-size: 48px;
-    display: inline-block;
-    margin-left: 10px;
+    font-size :26px;
+    margin-bottom: 20px ;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+}
+.home-crypto{
+  a{
+  display:flex ;
+  align-items: center;
+  gap:30px ;
+  padding: 20px 0;
+  border-bottom:2px solid #ddd;
+  span { display:block;}
+}}
+.home-crypto-image{
+  margin-right: 1rem;
+  width:50px ;
+  display:flex;
+  gap:30px ;
+}
+.home-crypto-name{
+  flex:1;
+  display:flex;
+ font-weight:bold;
+ color:black;
+font-size :18px;}
+.home-crypto-symbol{
+  flex:1;
+ color:grey;
+font-size :12px;}
+.home-crypto-price-main{
+  color:grey;
+  
+  font-size: 12px;
+}
+.home-crypto-price{
+  
+  color:grey;
+  font-size: 16px;
+}
+.home-crypto-prices{
+  
+  color:grey;
+  font-size: 10px;
+}
+.home-crypto-price-change {
+  font-size: 10px;
+  
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+.home-crypto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-header{
+  padding :40px 0;
+  text-align:center;
+  img{width:60px;
+  border-radius: 50px;
+  margin:0 auto;}
+  h2{
+    font-size:32px;
+
+  }
+
+}
+.CoinDetails{
+  padding-top :40px ;
+  padding-bottom :10px ;
+  h2 {
+    font-size :26px;
+    margin-bottom: 20px ;
     text-align: center;
     margin-bottom: 10px;
-    text-decoration: none;
-    color:black;
-  }
- 
-  .CoinList-image {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    vertical-align: middle;
-    
-  }
-
-  .CoinList-image img {
-    
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    color :black
     
   }
 }
-.HomePageCoinList a {
-  color: black;
-  
-}
-.CoinList-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 5px;
-  font-size: 5px;
-}
-
-.CoinList-info-item {
-  margin-right: 10px;
-}
-.coin-cell {
-  display: flex;
+.details-row{
+  display :flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f8e6e8;
-  padding: 10px;
-  border: 1px solid #ccc;
-  
-  .coin-image {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-  
-  .coin-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    
-    .coin-name {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .coin-details {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      
-      span {
-        margin-right: 10px;
-      }
-    }
-  }
+  padding: 10px 0;
+  border-bottom: 1px solid grey;
+
 }
+h3 {
+  font-size :16px;
+  margin-bottom: 20px ;
+  text-align: center;
+  color :black
+  
+}
+.description-section {
+  margin-top: 20px;
+}
+
+.description-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
