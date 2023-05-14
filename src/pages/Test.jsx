@@ -74,7 +74,7 @@ export default function Test() {
   </div>
   </div>
   <div className="width">
-  <div className="description">
+  <div className="description-section">
       <h3>Description</h3>
       <div dangerouslySetInnerHTML={{ __html: details.data?.description }}></div>
     </div>

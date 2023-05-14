@@ -14,7 +14,7 @@ export default function Header({back}) {
                       <AiOutlineLeft size={24}  />
                     </Link>
            )}
-            <Link to ="/">Coingecko</Link>
+            <Link to ="/?page=1&PAGE_SIZE=10">Coingecko</Link>
 
        </h1>
        
