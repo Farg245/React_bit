@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429
   const cachedData = cache.get(cacheKey);
   if (cachedData&& cachedData!==[]) {
-   // console.log('Using cached data...');
+   
     return res.json(cachedData);
   }
   //// this part is to be removed- it caches data  so we dont do too many requests on the geckopoint API and we get error 429

@@ -1,6 +1,6 @@
 import React from 'react'
 import coinDetails from '../stores/coinDetails'
-import {Link} from 'react-router-dom'
+
 import{useParams} from 'react-router-dom'
 import Header from '../components/Header'
 export default function Test() {
@@ -21,9 +21,12 @@ export default function Test() {
     <div>
       <Header back />
       <header className="test-header">
+        
        <img src={details.data.image} alt={details.data?.name} />
-     
-      <h2>{details.data.name}({details.data.symbol})</h2>
+       <h2>
+          {details.data?.name}
+          <span className="symbol">({details.data?.symbol})</span>
+      </h2>
       </header>
       <div className="width">
       <div className="CoinDetails">
@@ -70,10 +73,12 @@ export default function Test() {
   </div>
   </div>
   </div>
+  <div className="width">
   <div className="description">
       <h3>Description</h3>
       <div dangerouslySetInnerHTML={{ __html: details.data?.description }}></div>
     </div>
+            </div>
             </div>
           )
         }
