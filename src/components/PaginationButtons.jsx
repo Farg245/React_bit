@@ -13,14 +13,14 @@ export default function PaginationButtons({ totalPages, currentPage, onPageChang
           ))}
         </div>
         {Array.from({ length: totalPages }).map((_, i) => (
-          <a 
+          <button  onClick={() => onPageChange(i + 1)}
             key={i}
             className={currentPage === i + 1 ? 'active' : ''}
-            onClick={() => onPageChange(i + 1)}
+            
             disabled={currentPage === i + 1}
           >
             {i + 1}
-          </a>
+          </button>
         ))}
         <div>
           <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>

@@ -62,23 +62,23 @@ display:flex;}
   margin-bottom :10px;
 }
 
-.pagination a {
-  color:black ;
-  float: left;
+.pagination button {
+  color:rgb(11, 0, 12) ;
+  float: flex;
   padding: 2px 4px;
-  border-radius: 4px ;
+  border-radius: 6px ;
   text-decoration: none;
-  margin-bottom :10px;
+  margin-bottom :20px;
 }
 
 .pagination a.active {
-  background-color: rgb(191, 149, 223);
-  color:rgb(241, 234, 234);
+  background-color: hsl(274, 54%, 73%);
+  color:rgb(237, 133, 202);
   font-weight: bold;
   
 }
 
-.pagination a:hover:not(.active) {background-color: #c8c2ed;}
+.pagination a:hover:not(.active) {background-color: #a397f1;}
 
 
 .home-cryptos{
