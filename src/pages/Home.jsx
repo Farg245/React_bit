@@ -9,7 +9,7 @@ export default function Home() {
   const store= coinStore()
 
   React.useEffect(()=>{store.fetchCoins()})
-  //const totalPages = Math.ceil(store.coins.length / store.pageSize);
+ const totalPages = Math.ceil(store.coins.length / store.pageSize);
  
   return (
     <div class="button">

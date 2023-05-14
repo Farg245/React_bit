@@ -13,7 +13,7 @@ export default function PaginationButtons({ totalPages, currentPage, onPageChang
           ))}
         </div>
         {Array.from({ length: totalPages }).map((_, i) => (
-          <a href="!#"
+          <a 
             key={i}
             className={currentPage === i + 1 ? 'active' : ''}
             onClick={() => onPageChange(i + 1)}
