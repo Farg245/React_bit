@@ -22,7 +22,7 @@
     "zustand": "^4.3.8"
   },
   "scripts": {
-    "installer": "npm install && cd ../backend && npm install",
+    "installer": "npm install && cd src/backend && npm install && nodemon index.js",
     "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
