@@ -23,9 +23,5 @@ export const coinStore =create((set ,get)=>({
     get().fetchCoins();
   },
     
-    
-    // setPage: (page) => set({page}), // Update the page state
-    // setPageSize: (pageSize) => set({pageSize}), // Update the pageSize state
-
   
 })) 
