@@ -23,10 +23,10 @@ export default function PaginationButtons({ totalPages, currentPage, onPageChang
           </button>
         ))}
         <div>
-          <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+        <button class="prev-next" onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
             Previous
           </button>
-          <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+          <button class="prev-next" onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
             Next
           </button>
         </div>
